@@ -64,3 +64,16 @@ header {
     margin: 10px; 
     width: 300px; 
 }
+
+@media screen and (min-width: 900px) {
+    header {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    header .nav_links{
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+}
