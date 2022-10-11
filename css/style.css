@@ -20,25 +20,28 @@ body {
     background-color: #f1f1f1;
 }
 
+/* display the 2 header elements as a flexbox in a column and align them in the center */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* the nav links also need to be a flexbox in a column */
 .nav_links {
     display: flex;
     flex-direction: column;
 }
 
+/* default color of unvisited links is blue so set the color of visited links to blue to make it look unchanged */
 .nav_links a:visited {
     color: blue;
 }
 
+/* round off the edges and set an initial size of 450px */
 .card {
     border-radius: 50px 50px 0 0;
     flex-basis: 450px;
-    box-sizing: content-box;
 }
 
 .card > header {
@@ -48,14 +51,20 @@ header {
     border-radius: 50px 50px 0 0;
 }
 
+/* set the pricing class as a flexbox and display elements in a row 
+   want to align elements in the center vertically and horizontally
+   have to use wrap so there is only 1 row element per column 
+*/
 .pricing {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
+/* use flexbox for gallery and make it so they wrap to get 2 images per column
+   center on main axis using justify-content
+*/
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -68,37 +77,54 @@ header {
     width: 300px; 
 }
 
+/* screens greater than 900px */
 @media screen and (min-width: 900px) {
+    /* header flex direction is now a row and use space between to separate the two elements
+       space between makes them be on opposite sides of the screen
+    */
     header {
         flex-direction: row;
         justify-content: space-between;
     }
+
+    /* nav links element also need to be in a row */
     .nav_links{
         flex-direction: row;
     }
+
+    /* card elements have initial size of 275px */
     .card {
         flex-basis: 275px;
     }
+
+    /* use sticky to get the header bar to stay while scrolling */
     body > header {
         position: sticky;
         top: 0;
     }
 }
 
+/* reduce motion */
 @media screen and (prefers-reduced-motion: reduce) {
     #logo {
         animation: none;
     }
 }
 
+/* print screen */
 @media print {
+    /* remove background image */
     body {
         font-family: Arial, Helvetica;
         background-image: none;
     }
+
+    /* set nav bar to have 100% width to use space around */
     nav {
         width: 100%;
     }
+
+    /* set flex direction to row and use space around so they are spaced apart */
     .nav_links {
         flex-direction: row;
         justify-content: space-around;
