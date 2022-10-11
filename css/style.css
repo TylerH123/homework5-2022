@@ -37,7 +37,7 @@ header {
 
 .card {
     border-radius: 50px 50px 0 0;
-    width: 450px;
+    flex-basis: 450px;
 }
 
 .card > header {
@@ -49,8 +49,10 @@ header {
 
 .pricing {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .gallery {
@@ -68,12 +70,52 @@ header {
 @media screen and (min-width: 900px) {
     header {
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
-
-    header .nav_links{
+    .nav_links{
         flex-direction: row;
-        justify-content: flex-end;
     }
-    
+    .card {
+        flex-basis: 275px;
+    }
+    body > header {
+        position: sticky;
+        top: 0;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+    /* header {
+        justify-content: space-around;
+    } */
+    nav {
+        width: 100%;
+    }
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .pricing {
+        align-items: flex-end;
+    }
+    .card {
+        border: 2px #45ADDD solid; 
+        flex-basis: 325px;
+    }
+    #gallery, .gallery{
+        display: none;
+    }
+    .card li:nth-of-type(2)::after {
+        content: "👍";
+    }
 }
