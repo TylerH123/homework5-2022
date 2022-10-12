@@ -129,16 +129,24 @@ header {
         flex-direction: row;
         justify-content: space-around;
     }
+
+    /* use flex end to align cards on the bottom */
     .pricing {
         align-items: flex-end;
     }
+
+    /* set initial size to 325px */
     .card {
         border: 2px #45ADDD solid; 
         flex-basis: 325px;
     }
+
+    /* remove gallery from print view */
     #gallery, .gallery{
         display: none;
     }
+
+    /* add emojis to second li element in card classes */
     .card li:nth-of-type(2)::after {
         content: "👍";
     }
