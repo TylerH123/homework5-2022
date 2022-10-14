@@ -44,10 +44,10 @@ header {
     flex-basis: 450px;
 }
 
-.card > header {
+.card>header {
     background: #288088;
-    border: solid 2px #45ADAD; 
-    padding: 20px 0 20px 0; 
+    border: solid 2px #45ADAD;
+    padding: 20px 0 20px 0;
     border-radius: 50px 50px 0 0;
 }
 
@@ -72,13 +72,14 @@ header {
 }
 
 .gallery img {
-    border: 10px solid #50C7C7; 
-    margin: 10px; 
-    width: 300px; 
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
 }
 
 /* screens greater than 900px */
 @media screen and (min-width: 900px) {
+
     /* header flex direction is now a row and use space between to separate the two elements
        space between makes them be on opposite sides of the screen
     */
@@ -88,7 +89,7 @@ header {
     }
 
     /* nav links element also need to be in a row */
-    .nav_links{
+    .nav_links {
         flex-direction: row;
     }
 
@@ -98,7 +99,7 @@ header {
     }
 
     /* use sticky to get the header bar to stay while scrolling */
-    body > header {
+    body>header {
         position: sticky;
         top: 0;
     }
@@ -113,6 +114,7 @@ header {
 
 /* print screen */
 @media print {
+
     /* remove background image */
     body {
         font-family: Arial, Helvetica;
@@ -133,16 +135,18 @@ header {
     /* use flex end to align cards on the bottom */
     .pricing {
         align-items: flex-end;
+        flex-wrap: nowrap;
     }
 
     /* set initial size to 325px */
     .card {
-        border: 2px #45ADDD solid; 
+        border: 2px #45ADDD solid;
         flex-basis: 325px;
     }
 
     /* remove gallery from print view */
-    #gallery, .gallery{
+    #gallery,
+    .gallery {
         display: none;
     }
 
